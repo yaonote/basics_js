@@ -1,12 +1,16 @@
 
-function foo() { // 运行
-    console.log( this.a );
+function add() {
+    var _args = [...arguments]
+    var _add = function () {
+        _args.push(...arguments)
+        return _add
+    }
+    _add.toString=function () { 
+        return _args.reduce(function (a,b) {
+            return a+b
+        })
+    }
+    return _add
 }
 
-var a = 2;
-
-(function() { // 严格模式下调用函数则不影响默认绑定
-    "use strict";
-    
-    foo(); // 2
-})();
+console.log(add(1))
