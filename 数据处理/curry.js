@@ -61,3 +61,26 @@ function add() {
     }
     return _add
 }
+
+
+function add2() {
+    const _args = [...arguments];
+    const _add = function() {
+        _args.push(...arguments);
+        return _add
+    }
+    _add.toString = function() {
+        return _args.reduce((acc,curr) => acc+curr)
+    }
+    return _add
+}
+
+const a = add2(1,2)(1)(1)(2)
+
+
+
+/**
+ * 是函数的隐式转换。当我们直接将函数参与其他的计算时，
+ * //函数会默认调用toString方法，直接将函数体转换为字符串参与计算。
+ */
+
