@@ -151,3 +151,7 @@ Promise.all = function (promises) {
         };
     });
 }
+
+
+
+// 博客地址 https://juejin.im/post/5b2f02cd5188252b937548ab#heading-1

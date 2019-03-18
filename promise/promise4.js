@@ -96,3 +96,5 @@ function resolvePromise(promise2, x, resolve, reject) {
         resolve(x);
     }
 }
+
+//博客地址 

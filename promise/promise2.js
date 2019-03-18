@@ -1,4 +1,4 @@
-class Promise {
+class Promise2 {
     constructor(executor) {
         // 初始化state为等待态
         this.state = 'pending';
@@ -43,3 +43,27 @@ class Promise {
         };
     }
 }
+
+const test = () => new Promise2(function(resolve, reject) {
+    resolve('success')
+})
+
+test().then(function(res) {
+    console.log('then res =>',res)
+})
+
+
+
+// class Test {
+//     constructor() {
+
+//     }
+
+//     then() {
+//         console.log('test.then')
+//     }
+// }
+
+// const test = new Test()
+
+// test.then()

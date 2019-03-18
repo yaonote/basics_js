@@ -1,4 +1,4 @@
-class Promise {
+class Promise1 {
     constructor(executor) {
         // 初始化state为等待态
         this.state = 'pending';
@@ -7,6 +7,7 @@ class Promise {
         // 失败的原因
         this.reason = undefined;
         let resolve = value => {
+            console.log('resolve => value',value)
             // state改变,resolve调用就会失败
             if (this.state === 'pending') {
                 // resolve调用后，state转化为成功态
@@ -32,3 +33,12 @@ class Promise {
         }
     }
 }
+
+
+
+const test = () => new Promise1(function(resolve, reject) {
+    console.log(1)
+    resolve('resolve =>')
+})
+
+test()
