@@ -26,13 +26,10 @@ var prime = function (len) {
     var arr = [];
     for (i = 1; i < len; i++) {
         for (j = 2; j < i; j++) {
-            console.log(` inner ====>>>   i => ${i} *** j => ${j}`)
             if (i % j === 0) {
                 break;
             }
         }
-        // console.log(`i => ${i} *** j => ${j}`)
-        // console.log(`i => ${i}`)
         if (i <= j && i != 1) {
             arr.push(i);
         }
@@ -42,12 +39,3 @@ var prime = function (len) {
 console.log(prime(10));
 
 
-// for(let i = 0; i < 5; i++ ) {
-//     for(let j = 2; j< i; j++ ){
-//         if(i === 3){
-//             break
-//         };
-//         console.log(`j => ${j}`)
-//     }
-//     // console.log(`i => ${i}`)
-// }
