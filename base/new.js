@@ -4,7 +4,7 @@ var Person = function(name, age) {
     this.age = age;
     this.getName = function() {
         return this.name;
-    }
+    };
 }
 
 // 将构造函数以参数形式传入
@@ -19,7 +19,7 @@ function New(func) {
     }
 
     // ret为构造函数执行的结果，这里通过apply，将构造函数内部的this指向修改为指向res，即为实例对象
-    var ret = func.apply(res, Array.prototype.slice.call(arguments, 1));
+    var ret = func.apply(res, Array.prototype.slice.call(arguments, 1));//执行了一下构造函数，判断构造函数是否有返回结果  arguments 为 func的参数
 
     // 当我们在构造函数中明确指定了返回对象时，那么new的执行结果就是该返回对象
     if ((typeof ret === "object" || typeof ret === "function") && ret !== null) {
