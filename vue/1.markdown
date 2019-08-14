@@ -1,0 +1,14 @@
+### vue 的响应式数据系统靠的是
++ Object.defineProperty的 get set 方法
++ 依赖收集
++ 依赖更新
+
+----
+
+data 中的每个属性都会通过 defineProperty 绑定 get 和 set 方法
+
+get 进行依赖收集
+set 进行依赖更新
+
+在get的时候会将依赖存入到属性专属的subs里
+subs 里存入的是 用于更新页面的watcher

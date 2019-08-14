@@ -61,6 +61,16 @@
 // }
 
 
-const str = '123';
 
-console.log(str.split('').reverse().join(''))
+
+
+// Promise.resolve(Promise.reject()).then(res => {
+//     console.log('res')
+// }).catch(err => {
+//     console.log('err')
+// })
+
+const str = '我爱北京天安们 还有台湾';
+
+
+
