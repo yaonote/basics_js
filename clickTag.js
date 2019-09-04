@@ -1,9 +1,7 @@
 const child = require('child_process');
 
-child.exec('pwd',function(err,sto){
-    console.log('sto =>',sto)
-})
 
-child.exec('git status',function(err,sto){
+
+child.exec('git symbolic-ref -q --short HEAD',function(err,sto){
     console.log('sto =>',sto)
 })
