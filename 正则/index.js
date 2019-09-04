@@ -22,3 +22,20 @@
 
 // 匹配时间 00:00-23:59
 // const reg = /^([01][0-9]|[0-2][0-3]):[0-5][0-9]$/;
+
+// launchApp://mx_meeting$$#/meeting_detail/1164454853980852224
+
+// const str = 'launchApp://mx_meeting$$#/meeting_detail/1164454853980852224';
+
+// const res = str.match(/\/\/([^)]*)\$$/)
+
+// console.log(res[1]);
+
+
+
+// var aa="ldfjsldfj(dsfasjfj3124123)";
+// var result = aa.match(/\( ([^)]*) \)/);
+// // 此时result＝["(dsfasjfj3124123)", "dsfasjfj3124123"];
+// if (result) {
+//     console.log(result[1]); // "dsfasjfj3124123"
+// }

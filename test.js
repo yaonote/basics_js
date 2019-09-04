@@ -1,3 +1,25 @@
+function generate(fn,n) {
+    return function() {
+        for(let i = 1; i<=n; i++) {
+            fn.apply(this,[...arguments])
+        }
+    }
+}
+const test = (a,b) => console.log(a+b)
+
+const next = generate(test,3);
+next(1,2)
+
+
+
+
+
+
+
+
+
+
+
 // function add() {
 //     // 第一次执行时，定义一个数组专门用来存储所有的参数
 //     var _args = [].slice.call(arguments);
@@ -70,7 +92,7 @@
 //     console.log('err')
 // })
 
-const str = '我爱北京天安们 还有台湾';
+// const str = '我爱北京天安们 还有台湾';
 
 
 
