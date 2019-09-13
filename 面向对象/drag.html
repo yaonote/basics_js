@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Drag</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            cursor: pointer;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="div1"></div>
+    
+    <script>
+        function Drag(id) {
+            this.disX = 0;
+            this.disY = 0;
+            this.elem = document.getElementById(id)
+        }
+        Drag.prototype.init = function() {
+            var vm = this;
+            this.elem.onmousedown = function(ev) {
+                vm.down(ev)
+                document.onmousemove = function(ev) {
+                    vm.move(ev);
+                };
+                document.onmouseup = function() {
+                    document.onmouseover = null;
+                    document.onmouseup = null;
+                }
+            }
+        }
+
+        Drag.prototype.down = function(ev) {
+            this.disX = ev.pageX - this.elem.offsetLeft;
+            this.disY = ev.pageY - this.elem.offsetTop;
+        }
+
+        Drag.prototype.move = function(ev) {
+            this.elem.style.left = ev.pageX - this.disX + 'px';
+            this.elem.style.top = ev.pageY - this.disY + 'px';
+        }
+
+        const drag1 = new Drag('div1');
+        drag1.init()
+    
+    </script>
+
+
+
+</body>
+</html>
