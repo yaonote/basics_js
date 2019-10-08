@@ -12,8 +12,8 @@ const handleExec = (shell) => {
     })
 }
 
-var branchName = '';
-var newTag = '';
+let branchName = '';
+let newTag = '';
 handleExec('git symbolic-ref -q --short HEAD').then(branchNameRes => {
     branchName = branchNameRes.replace('\n','');
     return handleExec(`git tag | grep v${branchName}_Alpha`)

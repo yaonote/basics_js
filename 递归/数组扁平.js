@@ -1,11 +1,11 @@
-Array.prototype.flat = function() {
-    var arr = [];
-    this.forEach((item,index) => {
+Array.prototype.myFlat = function() {
+    var result = [];
+    this.forEach(item => {
         if(Array.isArray(item)){
-            arr = arr.concat(item.flat())
+            result = result.concat(item.myFlat())
         }else{
-            arr.push(item)
+            result.push(item)
         }
     })
-    return arr
+    return result;
 }
